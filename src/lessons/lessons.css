@@ -1,0 +1,65 @@
+/* レッスン用の最低限のスタイル。見た目はあとで自由に変えてOKです */
+.lesson {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  text-align: left;
+}
+
+.lesson h1 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.lesson h2 {
+  font-size: 1.2rem;
+  margin-top: 40px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.lesson .lead {
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  background: var(--social-bg);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  color: var(--text-h);
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: var(--accent-bg);
+  color: var(--accent);
+  margin-left: 8px;
+}
+
+.todo {
+  margin: 12px 0;
+  padding: 12px;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-bg);
+  border-radius: 4px;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

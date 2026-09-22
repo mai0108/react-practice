@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "山田 太郎", "email": "taro@example.com", "city": "東京" },
+  { "id": 2, "name": "佐藤 花子", "email": "hanako@example.com", "city": "大阪" },
+  { "id": 3, "name": "鈴木 一郎", "email": "ichiro@example.com", "city": "福岡" },
+  { "id": 4, "name": "高橋 美咲", "email": "misaki@example.com", "city": "札幌" }
+]
