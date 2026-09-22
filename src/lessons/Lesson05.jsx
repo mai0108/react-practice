@@ -101,6 +101,13 @@ function UserList() {
   // 「再読み込み」ボタンを押すたびに 1 増える数。この数が変わったら再取得したい
   const [reloadCount, setReloadCount] = useState(0);
 
+  /**
+   * 「再読み込み」ボタンを押したときの処理
+   * - loading を true にする
+   * - error を null にする
+   * - reloadCount を 1 増やす
+   * すると useEffect が反応して fetchUsers が呼ばれる
+   */
   function handleReload() {
     setLoading(true);
     setError(null);
@@ -117,10 +124,10 @@ function UserList() {
         setError(err.message);
         setLoading(false);
       });
-  }, [reloadCount]);
+  }, [reloadCount]); // reloadCount が変わるたびに再取得する
 
   const reloadButton = (
-    <button type="button" onClick={() => handleReload()}>
+    <button type="button" onClick={handleReload}>
       再読み込み
     </button>
   );

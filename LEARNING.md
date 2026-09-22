@@ -48,7 +48,7 @@ React 公式ドキュメント（https://ja.react.dev/learn）の流れに沿っ
 
 目標: 明日中に一通り終える（目安 4〜5時間）
 
-1. 復習（15分）: Todo アプリに「編集」機能を自力で足す
+1. ~~復習（15分）: Todo アプリに「編集」機能を自力で足す~~ → 9/22 に前倒しで完了
 2. レッスン6（1時間）: useRef、カスタムフック（fetch を useFetch に切り出す）、useContext
 3. レッスン7（1時間）: React Router で複数ページ
 4. レッスン8（1.5時間）: TypeScript 入門。型の基本 → Todo アプリを .tsx に書き換え → props と state に型を付ける

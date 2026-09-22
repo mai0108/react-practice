@@ -71,7 +71,14 @@ function FilterButtons({ filter, onChange }) {
 // ---------------------------------------------------------------------
 // 子3: 1件分の表示
 // ---------------------------------------------------------------------
-function TodoItem({ todo, onToggle, onRemove }) {
+function TodoItem({ todo, onToggle, onRemove, onEdit }) {
+  // 「編集」を押すと、ブラウザの入力ダイアログで新しいタイトルを聞く
+  function handleEditClick() {
+    const newTitle = window.prompt('新しいタイトル', todo.title)
+    if (newTitle === null || newTitle.trim() === '') return // キャンセルや空は無視
+    onEdit(todo.id, newTitle.trim())
+  }
+
   return (
     <li>
       <label>
@@ -82,6 +89,9 @@ function TodoItem({ todo, onToggle, onRemove }) {
         />{' '}
         <span className={todo.done ? 'done' : ''}>{todo.title}</span>
       </label>{' '}
+      <button type="button" onClick={handleEditClick}>
+        編集
+      </button>{' '}
       <button type="button" onClick={() => onRemove(todo.id)}>
         削除
       </button>
@@ -118,6 +128,14 @@ function TodoApp() {
     setTodos(todos.filter((todo) => todo.id !== id)) // 「id が違うものだけ」を残す
   }
 
+  function handleEdit(id, newTitle) {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, title: newTitle } : todo, // 「id が同じものだけ」をコピーして title を差し替え
+      ),
+    )
+  }
+
   const visibleTodos = todos.filter((todo) => {
     if (filter === 'active') return !todo.done
     if (filter === 'done') return todo.done
@@ -141,6 +159,7 @@ function TodoApp() {
             todo={todo}
             onToggle={handleToggle}
             onRemove={handleRemove}
+            onEdit={handleEdit}
           />
         ))}
       </ul>
