@@ -7,7 +7,7 @@
 // ほとんどです。そのための考え方を学びます。
 // =====================================================================
 
-import { useState } from 'react'
+import { useState } from "react";
 
 // ---------------------------------------------------------------------
 // 1. 子から親へ: 関数を props で渡す
@@ -22,24 +22,24 @@ function FancyButton({ label, onPress }) {
     <button type="button" onClick={onPress}>
       {label}
     </button>
-  )
+  );
 }
 
 function ParentWithButton() {
-  const [message, setMessage] = useState('まだ押されていません')
+  const [message, setMessage] = useState("まだ押されていません");
 
   function handlePress(label) {
-    console.log('親が受け取った:', label)
-    setMessage(`「${label}」が押されました`)
+    console.log("親が受け取った:", label);
+    setMessage(`「${label}」が押されました`);
   }
 
   return (
     <div className="card">
-      <FancyButton label="A" onPress={() => handlePress('A')} />{' '}
-      <FancyButton label="B" onPress={() => handlePress('B')} />
+      <FancyButton label="A" onPress={() => handlePress("A")} />{" "}
+      <FancyButton label="B" onPress={() => handlePress("B")} />
       <p>{message}</p>
     </div>
-  )
+  );
 }
 
 // ---------------------------------------------------------------------
@@ -52,7 +52,7 @@ function ParentWithButton() {
 // 例: 色を選ぶ ColorPicker と、選んだ色を表示する Preview。
 //     どちらも「いま選ばれている色」を知る必要がある → 親 ColorDemo が持つ。
 
-const COLORS = ['tomato', 'gold', 'mediumseagreen', 'dodgerblue']
+const COLORS = ["tomato", "gold", "mediumseagreen", "dodgerblue"];
 
 function ColorPicker({ selected, onSelect }) {
   return (
@@ -65,14 +65,14 @@ function ColorPicker({ selected, onSelect }) {
           style={{
             background: color,
             marginRight: 8,
-            outline: color === selected ? '3px solid black' : 'none',
+            outline: color === selected ? "3px solid black" : "none",
           }}
         >
           {color}
         </button>
       ))}
     </p>
-  )
+  );
 }
 
 function Preview({ color }) {
@@ -80,19 +80,19 @@ function Preview({ color }) {
     <div style={{ background: color, padding: 16, borderRadius: 8 }}>
       選択中: {color}
     </div>
-  )
+  );
 }
 
 function ColorDemo() {
   // ← state はここ（共通の親）に1つだけ
-  const [selected, setSelected] = useState('tomato')
+  const [selected, setSelected] = useState("tomato");
 
   return (
     <div className="card">
       <ColorPicker selected={selected} onSelect={setSelected} />
       <Preview color={selected} />
     </div>
-  )
+  );
 }
 
 // ---------------------------------------------------------------------
@@ -105,30 +105,32 @@ function ColorDemo() {
 // { ...profile } は「profile の中身を全部コピーした新しいオブジェクト」です。
 
 function ProfileEditor() {
-  const [profile, setProfile] = useState({ name: '山田', age: 28 })
+  const [profile, setProfile] = useState({ name: "山田", age: 28 });
 
   return (
     <div className="card">
       <label>
-        名前:{' '}
+        名前:{" "}
         <input
           value={profile.name}
           onChange={(e) => setProfile({ ...profile, name: e.target.value })}
         />
-      </label>{' '}
+      </label>{" "}
       <label>
-        年齢:{' '}
+        年齢:{" "}
         <input
           type="number"
           value={profile.age}
-          onChange={(e) => setProfile({ ...profile, age: Number(e.target.value) })}
+          onChange={(e) =>
+            setProfile({ ...profile, age: Number(e.target.value) })
+          }
         />
       </label>
       <p>
         {profile.name}（{profile.age}歳）
       </p>
     </div>
-  )
+  );
 }
 
 // ---------------------------------------------------------------------
@@ -142,21 +144,21 @@ function ProfileEditor() {
 // 下の買い物リストでは、削除と「買った」切り替えは実装済みです。
 
 const initialItems = [
-  { id: 1, name: '牛乳', bought: false },
-  { id: 2, name: '卵', bought: true },
-]
+  { id: 1, name: "牛乳", bought: false },
+  { id: 2, name: "卵", bought: true },
+];
 
 // 入力欄と「追加」ボタンだけを担当する子コンポーネント。
 // 何を追加するかは親に onAdd で伝えるだけで、リスト自体は持たない。
 function AddItemForm({ onAdd }) {
-  const [text, setText] = useState('')
+  const [text, setText] = useState("");
 
   function handleSubmit(event) {
-    event.preventDefault() // フォーム送信でページが再読み込みされるのを防ぐ
-    const name = text.trim()
-    if (name === '') return
-    onAdd(name) // 親に「追加する名前」を伝える
-    setText('')
+    event.preventDefault(); // フォーム送信でページが再読み込みされるのを防ぐ
+    const name = text.trim();
+    if (name === "") return;
+    onAdd(name); // 親に「追加する名前」を伝える
+    setText("");
   }
 
   return (
@@ -165,10 +167,10 @@ function AddItemForm({ onAdd }) {
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="買うものを入力"
-      />{' '}
+      />{" "}
       <button type="submit">追加</button>
     </form>
-  )
+  );
 }
 
 // 「買ったものを消す」ボタンだけの子コンポーネント。
@@ -178,34 +180,34 @@ function ClearBoughtButton({ onClear }) {
     <button type="button" onClick={onClear}>
       買ったものを消す
     </button>
-  )
+  );
 }
 
 // =====================================================================
 // 練習問題: 買い物リストへの追加
 // =====================================================================
 function ShoppingList() {
-  const [items, setItems] = useState(initialItems)
+  const [items, setItems] = useState(initialItems);
 
   function handleAdd(name) {
-    const newItem = {id: Date.now(), name, bought: false}
-    setItems([...items, newItem])
+    const newItem = { id: Date.now(), name, bought: false };
+    setItems([...items, newItem]);
   }
 
   function handleToggle(id) {
     setItems(
-      items.map((item) =>
-        item.id === id ? { ...item, bought: !item.bought } : item, // 「id が同じものだけ」をコピーして bought を反転
+      items.map(
+        (item) => (item.id === id ? { ...item, bought: !item.bought } : item), // 「id が同じものだけ」をコピーして bought を反転
       ),
-    )
+    );
   }
 
   function handleRemove(id) {
-    setItems(items.filter((item) => item.id !== id)) // 「id が違うものだけ」を残す
+    setItems(items.filter((item) => item.id !== id)); // 「id が違うものだけ」を残す
   }
 
   function handleClearBought() {
-    setItems(items.filter((item) => !item.bought)) // 「買ったもの以外」を残す
+    setItems(items.filter((item) => !item.bought)); // 「買ったもの以外」を残す
   }
 
   return (
@@ -219,9 +221,9 @@ function ShoppingList() {
                 type="checkbox"
                 checked={item.bought}
                 onChange={() => handleToggle(item.id)}
-              />{' '}
-              <span className={item.bought ? 'done' : ''}>{item.name}</span>
-            </label>{' '}
+              />{" "}
+              <span className={item.bought ? "done" : ""}>{item.name}</span>
+            </label>{" "}
             <button type="button" onClick={() => handleRemove(item.id)}>
               削除
             </button>
@@ -229,11 +231,11 @@ function ShoppingList() {
         ))}
       </ul>
       <p>
-        残り {items.filter((item) => !item.bought).length} 品{' '}
+        残り {items.filter((item) => !item.bought).length} 品{" "}
         <ClearBoughtButton onClear={handleClearBought} />
       </p>
     </div>
-  )
+  );
 }
 
 // =====================================================================
@@ -262,7 +264,7 @@ function Lesson03() {
         <ShoppingList />
       </div>
     </div>
-  )
+  );
 }
 
-export default Lesson03
+export default Lesson03;
