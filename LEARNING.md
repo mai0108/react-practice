@@ -37,17 +37,18 @@ React 公式ドキュメント（https://ja.react.dev/learn）の流れに沿っ
 - [x] **レッスン6: useRef / カスタムフック / useContext**（2026-09-23 完了）
 - [x] **レッスン7: ルーティング（React Router）と複数ページ**（2026-09-23 完了）
 - [x] **レッスン8: TypeScript 入門（型の基本、Todo アプリを .tsx に書き換え、props/state の型）**（2026-09-23 完了）
-- [ ] **仕上げ: 自力で小さなアプリを TypeScript で作る（レッスン4+5の組み合わせ、ヒントなし）** ← 次はここ
+- [x] **仕上げ: 自力で小さなアプリを TypeScript で作る（`src/lessons/Final.tsx`）**（2026-09-23 完了）
 
 ## 進捗メモ
 
+- 2026-09-23: 仕上げ課題 完了。**全カリキュラム修了。** useFetch を自分で再実装し、お気に入りを別 state にする設計判断も自分で行えた。
 - 2026-09-23: レッスン8 完了（typescript 7 を追加、tsconfig.json 作成、npm run typecheck を追加。Todo の any を全部型に置き換えた）。
 - 2026-09-23: レッスン7 完了（react-router 8 を追加。useParams と Link を自力実装）。
 - 2026-09-23: レッスン6 完了（useFetch を自力で書けた。StrictMode の2回実行も確認）。
 - 2026-09-22: Docker 環境構築完了。レッスン1 完了（練習3問すべて自力で正解）。レッスン2 完了（QuantitySelector を Math.min/max 方式で実装）。レッスン3 完了（handleAdd を Date.now() + スプレッド構文で実装）。「子から親へ関数を渡す」「() => f('A') と f('A') の違い」を重点的に復習した。レッスン4 完了（3ステップすべて自力で実装。フィルタは filter 内 if 方式）。レッスン5 完了（fetch + loading/error + 再読み込み。state のリセットは effect ではなくイベントハンドラに書く、を学んだ）。
 - Claude Code の学習モード（Learning 出力スタイル）を有効化。コード内の `TODO(human)` を自分で書く進め方。
 
-## 明日（2026-09-23）の計画
+## 2026-09-23 の計画（すべて完了）
 
 目標: 明日中に一通り終える（目安 4〜5時間）
 
