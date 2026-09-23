@@ -7,48 +7,81 @@
 // =====================================================================
 
 // 練習1: 名前を受け取り「こんにちは、太郎さん」という文字列を返す
-// TODO(human): ここから始めてください
-export function greet(name) {}
+export function greet(name) {
+  return `こんにちは、${name}さん`;
+}
 
 // 練習2: 2つの数の合計を返す
-export function sum(a, b) {}
+export function sum(a, b) {
+  return a + b;
+}
 
 // 練習3: 数値の配列を受け取り、全部2倍にした新しい配列を返す（map）
-export function doubleAll(nums) {}
+export function doubleAll(nums) {
+  return nums.map((num) => num * 2);
+}
 
 // 練習4: 数値の配列から偶数だけを残した新しい配列を返す（filter）
-export function onlyEven(nums) {}
+export function onlyEven(nums) {
+  return nums.filter((num) => 0 === (num % 2));
+}
 
 // 練習5: users（{ id, name } の配列）から、id が一致する1件を返す（find）
-export function findById(users, id) {}
+export function findById(users, id) {
+  return users.find((user) => user.id === id);
+}
 
 // 練習6: users から name だけを取り出した配列を返す（map）
-export function names(users) {}
+export function names(users) {
+  return users.map((user) => user.name);
+}
 
 // 練習7: 配列の末尾に item を追加した新しい配列を返す。元の配列は変えない（スプレッド）
-export function addItem(arr, item) {}
+export function addItem(arr, item) {
+  return [...arr, item];
+}
 
 // 練習8: items から id が一致するものを取り除いた新しい配列を返す（filter）
-export function removeById(items, id) {}
+export function removeById(items, id) {
+  return items.filter((item) => item.id !== id)
+}
 
 // 練習9: todos（{ id, title, done }）のうち id が一致する1件だけ done を反転した新しい配列を返す（map + スプレッド）
-export function toggleDone(todos, id) {}
+export function toggleDone(todos, id) {
+  return todos.map((todo) => todo.id === id ? {...todo, done: !todo.done} : todo);
+}
 
 // 練習10: user オブジェクトの name だけを newName に変えた新しいオブジェクトを返す。元は変えない
-export function updateName(user, newName) {}
+export function updateName(user, newName) {
+  return {...user, name: newName}
+}
 
 // 練習11: todos のうち done が true の件数を返す
-export function countDone(todos) {}
+export function countDone(todos) {
+  return todos.filter((todo) => todo.done === true).length
+}
 
 // 練習12: user（{ name, city }）から「山田（東京）」という文字列を返す（テンプレート文字列）
-export function formatUser(user) {}
+export function formatUser(user) {
+  return `${user.name}（${user.city}）`;
+}
 
 // 練習13: user.age が 18 以上なら true、そうでなければ false を返す
-export function isAdult(user) {}
+export function isAdult(user) {
+  return user.age >= 18 ? true : false;
+}
 
 // 練習14: items（{ price, qty }）の price × qty の合計を返す（for 文でも reduce でも可）
-export function total(items) {}
+export function total(items) {
+  let result = 0;
+  for (const item of items){
+    result += item.price * item.qty;
+  }
+  return result;
+}
 
 // 練習15: items（{ name, price }）を price の安い順に並べた新しい配列を返す。元は変えない
 //         ヒント: [...items].sort((a, b) => a.price - b.price)
-export function sortByPrice(items) {}
+export function sortByPrice(items) {
+  return [...items].sort((a, b) => a.price - b.price)
+}
