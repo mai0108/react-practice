@@ -61,7 +61,6 @@ function useFetch(url) {
       .then((data) => {
         setData(data);
         setLoading(false);
-        console.log("取得成功:", data);
       })
       .catch((err) => {
         setError(err.message);
