@@ -36,11 +36,12 @@ React 公式ドキュメント（https://ja.react.dev/learn）の流れに沿っ
   - fetch で API からデータ取得、ローディング/エラー表示
 - [x] **レッスン6: useRef / カスタムフック / useContext**（2026-09-23 完了）
 - [x] **レッスン7: ルーティング（React Router）と複数ページ**（2026-09-23 完了）
-- [ ] **レッスン8: TypeScript 入門（型の基本、Todo アプリを .tsx に書き換え、props/state の型）** ← いまここ
-- [ ] **仕上げ: 自力で小さなアプリを TypeScript で作る（レッスン4+5の組み合わせ、ヒントなし）**
+- [x] **レッスン8: TypeScript 入門（型の基本、Todo アプリを .tsx に書き換え、props/state の型）**（2026-09-23 完了）
+- [ ] **仕上げ: 自力で小さなアプリを TypeScript で作る（レッスン4+5の組み合わせ、ヒントなし）** ← 次はここ
 
 ## 進捗メモ
 
+- 2026-09-23: レッスン8 完了（typescript 7 を追加、tsconfig.json 作成、npm run typecheck を追加。Todo の any を全部型に置き換えた）。
 - 2026-09-23: レッスン7 完了（react-router 8 を追加。useParams と Link を自力実装）。
 - 2026-09-23: レッスン6 完了（useFetch を自力で書けた。StrictMode の2回実行も確認）。
 - 2026-09-22: Docker 環境構築完了。レッスン1 完了（練習3問すべて自力で正解）。レッスン2 完了（QuantitySelector を Math.min/max 方式で実装）。レッスン3 完了（handleAdd を Date.now() + スプレッド構文で実装）。「子から親へ関数を渡す」「() => f('A') と f('A') の違い」を重点的に復習した。レッスン4 完了（3ステップすべて自力で実装。フィルタは filter 内 if 方式）。レッスン5 完了（fetch + loading/error + 再読み込み。state のリセットは effect ではなくイベントハンドラに書く、を学んだ）。
@@ -62,4 +63,5 @@ React 公式ドキュメント（https://ja.react.dev/learn）の流れに沿っ
 docker compose up            # 開発サーバー起動
 docker compose exec app npm run lint   # 文法チェック
 docker compose exec app npm run build  # 本番ビルドが通るか確認
+docker compose exec app npm run typecheck  # TypeScript の型チェック（レッスン8〜）
 ```
