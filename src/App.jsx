@@ -5,11 +5,11 @@
 // 元のテンプレート画面を見たいときは
 //   import StarterPage from './StarterPage.jsx'
 // に切り替えて <StarterPage /> を表示すればOKです。
-import Lesson04 from './lessons/Lesson04.jsx'
+import Lesson06 from './lessons/Lesson06.jsx'
 import './lessons/lessons.css'
 
 function App() {
-  return <Lesson04 />
+  return <Lesson06 />
 }
 
 export default App
