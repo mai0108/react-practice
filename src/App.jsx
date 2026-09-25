@@ -5,11 +5,14 @@
 // 元のテンプレート画面を見たいときは
 //   import StarterPage from './StarterPage.jsx'
 // に切り替えて <StarterPage /> を表示すればOKです。
-import Practice from './practice/Practice.jsx'
+// 練習ドリルに戻すときは
+//   import Practice from './practice/Practice.jsx'
+// にして <Practice /> を表示します。
+import F01_PageSwitch from './lessons/fst/F01_PageSwitch.tsx'
 import './lessons/lessons.css'
 
 function App() {
-  return <Practice />
+  return <F01_PageSwitch />
 }
 
 export default App

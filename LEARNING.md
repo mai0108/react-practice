@@ -39,8 +39,20 @@ React 公式ドキュメント（https://ja.react.dev/learn）の流れに沿っ
 - [x] **レッスン8: TypeScript 入門（型の基本、Todo アプリを .tsx に書き換え、props/state の型）**（2026-09-23 完了）
 - [x] **仕上げ: 自力で小さなアプリを TypeScript で作る（`src/lessons/Final.tsx`）**（2026-09-23 完了）
 
+## fst-ryoshi 縮小版レッスン（2026-09-25 開始）
+
+業務リポジトリ fst-ryoshi で使われているパターンを、自分の題材（図書館アプリなど）で小さく書き直すレッスンです。
+各レッスンは **写経 → 改造（練習問題）→ 白紙から再現** の 3 段階で進めます。
+ファイルは `src/lessons/fst/` に置き、`src/App.jsx` の import を切り替えて表示します。
+
+- [ ] **F01: URL ルーターなしの画面切替**（`src/lessons/fst/F01_PageSwitch.tsx`。元: `constants/pages.ts` + `App.tsx`）
+- [ ] F02: useEffect で非同期取得（元: `pages/Top/Plan.tsx`。予定）
+- [ ] F03: useCallback の依存チェーンと Context（元: `App.tsx` → `pages/Hurikaeri/Hurikaeri.tsx`。予定）
+- [ ] F04: 純粋関数を自動採点に載せる（元: `hurikaeri/utils/filterLabels.ts`。予定）
+
 ## 進捗メモ
 
+- 2026-09-25: fst-ryoshi 縮小版レッスンを開始。F01 を追加（写経用）。
 - 2026-09-24: React ドリル R03・R04 完了（onClick の即実行、{ } の二重、style の二重括弧を復習）。次は R05 から。
 - 2026-09-23: 仕上げ課題 完了。**全カリキュラム修了。** useFetch を自分で再実装し、お気に入りを別 state にする設計判断も自分で行えた。
 - 2026-09-23: レッスン8 完了（typescript 7 を追加、tsconfig.json 作成、npm run typecheck を追加。Todo の any を全部型に置き換えた）。
